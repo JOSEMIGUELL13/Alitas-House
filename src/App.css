@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fuentes personalizadas */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background-color: black;
+}
+
+/* Scroll suave mejorado */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+/* Personalización de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f97316 0%, #c2410c 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ea580c 0%, #9a3412 100%);
+}
+
+/* Efecto de brillo para textos mejorado */
+.text-glow {
+  text-shadow: 0 0 10px rgba(249, 115, 22, 0.5), 
+               0 0 20px rgba(249, 115, 22, 0.3), 
+               0 0 30px rgba(249, 115, 22, 0.1);
+  transition: text-shadow 0.3s ease;
+}
+
+.text-glow:hover {
+  text-shadow: 0 0 15px rgba(249, 115, 22, 0.8), 
+               0 0 25px rgba(249, 115, 22, 0.6), 
+               0 0 35px rgba(249, 115, 22, 0.4);
+}
+
+/* Animaciones mejoradas */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Nuevas animaciones */
+@keyframes pulse-glow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 69, 0, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 69, 0, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 69, 0, 0.3));
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Atropos personalización mejorada */
+.atropos-banner {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+/* Efecto de hover mejorado para elementos */
+.hover-up {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-up:hover {
+  transform: translateY(-8px);
+}
+
+/* Transiciones suaves para todos los elementos */
+a, button, .transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Glassmorphism mejorado */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(249, 115, 22, 0.2);
+}
+
+/* Efecto de fuego mejorado */
+.fire-text {
+  background: linear-gradient(to bottom, #fff 20%, #f97316 40%, #ef4444 60%, #991b1b 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
+  animation: fire 2s linear infinite;
+}
+
+@keyframes fire {
+  0% {
+    background-position: 0% 200%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Nuevo efecto de fuego para fondos */
+.fire-bg-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.fire-bg-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255, 69, 0, 0.5) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.fire-bg-effect:hover::before {
+  opacity: 1;
+}
+
+/* Efecto de entrada suave */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto de rotación */
+.rotate-hover {
+  transition: transform 0.5s ease;
+}
+
+.rotate-hover:hover {
+  transform: rotate(5deg);
+}
+
+/* Efecto de escala para imágenes */
+.scale-image {
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scale-image:hover {
+  transform: scale(1.08);
+}
+
+/* Efecto de sombra para tarjetas */
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-shadow:hover {
+  box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3), 0 4px 6px -2px rgba(249, 115, 22, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Efecto de partículas de fuego */
+.fire-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #ff4500;
+  border-radius: 50%;
+  animation: riseAndFade 2s ease-out forwards;
+  opacity: 0.6;
+}
+
+@keyframes riseAndFade {
+  0% {
+    transform: translateY(0);
+    opacity: 0.6;
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateY(-100px) rotate(45deg);
+    opacity: 0;
+    filter: blur(3px);
+  }
+}
+
+/* Nuevo efecto para el hero de alitas3 */
+.alitas-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.alitas-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255, 69, 0, 0.5) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.alitas-effect:hover::after {
+  opacity: 1;
+}
+
+/* Transiciones de página */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
